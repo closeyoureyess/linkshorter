@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/V1.0.0-create-table-changelog.xml
+  - include:
+      file: db/changelog/V1.0.1-testdata-in-tables-changelog.xml

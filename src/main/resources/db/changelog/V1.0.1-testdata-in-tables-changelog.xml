@@ -1,0 +1,22 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1" author="vsirik">
+        <insert tableName="tasks_entity">
+            <column name="title" value="Liquibase миграции"/>
+            <column name="description" value="Сделать Liquibase миграции"/>
+            <column name="status" valueBoolean="false"/>
+            <column name="date_calendar" valueDate="2025-02-04T12:00:00"/>
+        </insert>
+
+        <insert tableName="tasks_entity">
+            <column name="title" value="Unit-тесты"/>
+            <column name="description" value="Написать Unit-тесты"/>
+            <column name="status" valueBoolean="false"/>
+            <column name="date_calendar" valueDate="2025-02-05T10:00:00"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
