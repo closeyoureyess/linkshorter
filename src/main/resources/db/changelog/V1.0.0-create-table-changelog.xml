@@ -6,22 +6,19 @@
 
     <changeSet id="1" author="vsirik">
 
-        <createSequence sequenceName="my_entity_seq" startValue="1" incrementBy="1"/>
+        <createSequence sequenceName="my_entity_sequence" startValue="1" incrementBy="5"/>
 
-        <createTable tableName="tasks_entity">
-            <column name="id" type="BIGINT" autoIncrement="true">
+        <createTable tableName="source_link">
+            <column name="id" type="BIGINT">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="link" type="VARCHAR">
+            <column name="base_source_link" type="VARCHAR">
                 <constraints nullable="false"/>
             </column>
-            <column name="description" type="VARCHAR">
-                <constraints nullable="true"/>
-            </column>
-            <column name="status" type="boolean">
+            <column name="unique_identifier" type="VARCHAR">
                 <constraints nullable="false"/>
             </column>
-            <column name="date_calendar" type="timestamp">
+            <column name="link_unique_identifier" type="VARCHAR">
                 <constraints nullable="false"/>
             </column>
         </createTable>

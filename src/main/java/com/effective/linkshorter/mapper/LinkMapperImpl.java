@@ -10,8 +10,9 @@ public class LinkMapperImpl implements LinkMapper {
     public Link convertDtoToLink(LinkDto linkDto) {
         Link link = new Link();
         link.setId(linkDto.getId());
-        link.setLink(linkDto.getLink());
+        link.setSourceLink(linkDto.getSourceLink());
         link.setUniqueIdentifier(linkDto.getUniqueIdentifier());
+        link.setLinkWithUniqueIdentifier(linkDto.getLinkWithUniqueIdentifier());
         return link;
     }
 
@@ -19,8 +20,9 @@ public class LinkMapperImpl implements LinkMapper {
     public LinkDto convertLinkToDto(Link link) {
         LinkDto linkDto = new LinkDto();
         linkDto.setId(link.getId());
-        linkDto.setLink(link.getLink());
+        linkDto.setSourceLink(link.getSourceLink());
         linkDto.setUniqueIdentifier(link.getUniqueIdentifier());
+        linkDto.setLinkWithUniqueIdentifier(link.getLinkWithUniqueIdentifier());
         return linkDto;
     }
 }
