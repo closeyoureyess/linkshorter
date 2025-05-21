@@ -8,5 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface LinkRepository extends JpaRepository<Link, Long> {
-    Optional<Link> findByUniqueIdentifierAndSessionId(String uniqueIdentifier);
+
+    Optional<Link> findByUniqueIdentifier(String uniqueIdentifier);
 }

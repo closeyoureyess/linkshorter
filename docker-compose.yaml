@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres:17.2
+    restart: "no"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${BASEPROJECT_DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${BASEPROJECT_DATABASE_PASSWORD}
+      POSTGRES_DB: ${BASEPROJECT_DATABASE_NAME}
+    healthcheck:
+      test: pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB
+      interval: 10s
+      timeout: 5s
+      start_period: 10s
+      retries: 5
+
+  redis:
+    image: redis:8.0.1
+    restart: "no"
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 10s
+      timeout: 5s
+      start_period: 10s
+      retries: 5
+volumes:
+  postgres_data:
+  redis_data:

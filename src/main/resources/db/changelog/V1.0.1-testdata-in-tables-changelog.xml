@@ -4,18 +4,18 @@
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
     <changeSet id="1" author="vsirik">
-        <insert tableName="tasks_entity">
-            <column name="title" value="Liquibase миграции"/>
-            <column name="description" value="Сделать Liquibase миграции"/>
-            <column name="status" valueBoolean="false"/>
-            <column name="date_calendar" valueDate="2025-02-04T12:00:00"/>
+        <insert tableName="source_link">
+            <column name="id" valueComputed="nextval('my_entity_sequence')"/>
+            <column name="base_source_link" value="https://google.com/"/>
+            <column name="unique_identifier" value="AAABCCCHC"/>
+            <column name="link_unique_identifier" value="https://localhost:8080/AAABCCCHC"/>
         </insert>
 
-        <insert tableName="tasks_entity">
-            <column name="title" value="Unit-тесты"/>
-            <column name="description" value="Написать Unit-тесты"/>
-            <column name="status" valueBoolean="false"/>
-            <column name="date_calendar" valueDate="2025-02-05T10:00:00"/>
+        <insert tableName="source_link">
+            <column name="id" valueComputed="nextval('my_entity_sequence')"/>
+            <column name="base_source_link" value="https://yahoo.com/"/>
+            <column name="unique_identifier" value="ABCDDDEHC"/>
+            <column name="link_unique_identifier" value="https://localhost:8080/ABCDDDEHC"/>
         </insert>
     </changeSet>
 
