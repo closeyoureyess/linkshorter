@@ -10,4 +10,8 @@ public class ConstantsClass {
     public static final Integer POSSIBLE_HTTPS = 8;
 
     public static final String HTTPS = "https://";
+
+    public static final String LINE_FEED = "\n";
+
+    public static final String POST_CREATE_LINK = "PostCreateLink";
 }
